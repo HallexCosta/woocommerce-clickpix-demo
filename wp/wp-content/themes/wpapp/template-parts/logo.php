@@ -1,0 +1,1 @@
+<img src="<?php echo getTheme('assets/logo.png'); ?>" alt="LOGO">

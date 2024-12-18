@@ -1,0 +1,7 @@
+<?php
+// Verifica se o usuário está tentando acessar o admin
+if ( strpos( $_SERVER['REQUEST_URI'], '/wp-admin' ) !== false || strpos( $_SERVER['REQUEST_URI'], '/wp-login.php' ) !== false ) {
+    return; // Permite o acesso ao painel de administração
+}
+
+$upgrading = time();
