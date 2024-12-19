@@ -123,7 +123,7 @@ function embedOpenPixPlugin()
 
   wp_enqueue_script(
     'clickpix-react',
-    'https://cdn.jsdelivr.net/gh/hallexcosta/clickpix-react@2.1.0-beta.1/dist/openpix-sdk.js',
+    "https://cdn.jsdelivr.net/gh/hallexcosta/clickpix-react@{$_ENV['OPENPIX_SDK_VERSION']}/dist/openpix-sdk.js",
     ['openpix'],
     null,
     true // load in footer
@@ -132,9 +132,9 @@ function embedOpenPixPlugin()
   $baseURL = $_ENV["BASE_URL"];
 
   $scriptBeforeCreateCharge = <<<JS
-    console.log(window.\$openpixSDK);
+    // console.log(window.\$openpixSDK);
 
-    console.log(window.\$openpixSDK.get('13', 'products'))
+    // console.log(window.\$openpixSDK.get('13', 'products'))
     document.addEventListener('DOMContentLoaded', function() {
         const baseURL = '$baseURL'
         const createOrderWC = async (memoryOrder) => {
