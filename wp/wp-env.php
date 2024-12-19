@@ -107,6 +107,8 @@ $required_envs = [
 	'FS_METHOD',
 ];
 
+var_dump($_ENV);exit;
+
 // Check if all required credentials are set in the .env file
 foreach ($required_envs as $required_env) {
 	if (empty($env_vars[$required_env])) {
