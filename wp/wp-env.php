@@ -6,11 +6,11 @@ $messages = [
 
 // Required database credentials
 $required_envs = [
-	'DB_HOST', 
-	'DB_NAME', 
-	'DB_USER', 
-	'DB_PASSWORD',
-	'DB_CHARSET',
+	'HOST', 
+	'NAME', 
+	'USER', 
+	'PASSWORD',
+	'CHARSET',
 	'APP_ENV',
 	'BASE_URL',
 	'WP_DEBUG',
@@ -38,7 +38,23 @@ foreach ($salt_keys_needed as $key) {
     $followOldFlow = true;
   }
 }
+// file_put_contents( 'ca.pem', 'testando');
+if (empty($_ENV['CA_CERT'])) {
+  // $fh = fopen(__DIR__ .  "/ca.pem", "w");
+  // fwrite($fh, 'Testando');
+  // fclose($fh);
+  echo file_put_contents( __DIR__ . '/ca.pem', $_ENV['CA_CERT']);
+  echo "teste";
+  exit;
+}
+define('DB_SSL_CA', __DIR__ . '/ca.pem');
 
+if (file_exists(__DIR__ . '/ca.pem')) {
+  echo "\n\nFILE EXISTS\n\n";
+  exit;
+} else {
+  echo "PEM not created";
+}
 
 // check if .env exists
 if ($followOldFlow) {
