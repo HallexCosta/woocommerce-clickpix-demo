@@ -24,6 +24,8 @@ $required_envs = [
 $followOldFlow = false;
 foreach ($required_envs as $key) {
   if (empty($_ENV[$key])) {
+    var_dump($_ENV[$key]);
+    exit;
     $followOldFlow = true;
   }
 }
