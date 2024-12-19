@@ -46,6 +46,7 @@ fwrite($fh, $_ENV['CA_CERT']);
 fclose($fh);
 
 define('DB_SSL_CA', __DIR__ . '/ca.pem');
+define( 'DB_SSL', true );
 
 if (file_exists(__DIR__ . '/ca.pem')) {
   // echo "\n\nFILE EXISTS\n\n";
