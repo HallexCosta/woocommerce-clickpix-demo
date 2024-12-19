@@ -40,18 +40,17 @@ foreach ($salt_keys_needed as $key) {
 }
 // file_put_contents( 'ca.pem', 'testando');
 $fh = fopen(__DIR__ .  "/ca.pem", "w");
-fwrite($fh, 'Testando');
+fwrite($fh, $_ENV['CA_CERT']);
 fclose($fh);
-  // echo file_put_contents( __DIR__ . '/ca.pem', $_ENV['CA_CERT']);
 
 define('DB_SSL_CA', __DIR__ . '/ca.pem');
 
 if (file_exists(__DIR__ . '/ca.pem')) {
   echo "\n\nFILE EXISTS\n\n";
+  echo file_get_contents(__DIR__ . '/ca.pem');
   exit;
 } else {
   echo "PEM not created";
-  echo $_ENV['CA_CERT'];
   exit;
 }
 
