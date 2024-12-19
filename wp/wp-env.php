@@ -46,9 +46,9 @@ fclose($fh);
 define('DB_SSL_CA', __DIR__ . '/ca.pem');
 
 if (file_exists(__DIR__ . '/ca.pem')) {
-  echo "\n\nFILE EXISTS\n\n";
-  echo file_get_contents(__DIR__ . '/ca.pem');
-  exit;
+  // echo "\n\nFILE EXISTS\n\n";
+  // echo file_get_contents(__DIR__ . '/ca.pem');
+  // exit;
 } else {
   echo "PEM not created";
   exit;
