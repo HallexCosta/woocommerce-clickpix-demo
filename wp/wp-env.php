@@ -7,8 +7,8 @@ $messages = [
 // Required database credentials
 $required_envs = [
 	'HOST', 
-	'NAME', 
-	'USER', 
+	'DATABASE', 
+	'USERNAME', 
 	'PASSWORD',
 	'CHARSET',
 	'APP_ENV',
