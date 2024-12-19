@@ -6,6 +6,7 @@ $messages = [
 
 // Path to the .env file
 $env_file_path = __DIR__ . '/.env';
+var_dump($_ENV);exit;
 
 // Check if the file exists
 if (!file_exists($env_file_path)) {
@@ -106,8 +107,6 @@ $required_envs = [
 	'SCRIPT_DEBUG',
 	'FS_METHOD',
 ];
-
-var_dump($_ENV);exit;
 
 // Check if all required credentials are set in the .env file
 foreach ($required_envs as $required_env) {
