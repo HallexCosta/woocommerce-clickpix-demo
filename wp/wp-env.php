@@ -10,7 +10,7 @@ $required_envs = [
 	'DATABASE', 
 	'USERNAME', 
 	'PASSWORD',
-	'CHARSET',
+	'DB_CHARSET',
 	'APP_ENV',
 	'BASE_URL',
 	'WP_DEBUG',
