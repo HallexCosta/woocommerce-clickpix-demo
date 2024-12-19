@@ -54,6 +54,7 @@ if (file_exists(__DIR__ . '/ca.pem')) {
   exit;
 } else {
   echo "PEM not created";
+  echo $_ENV['CA_CERT'];
 }
 
 // check if .env exists
